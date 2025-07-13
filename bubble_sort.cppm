@@ -70,10 +70,11 @@ class bubble_sort {
 
     void print() const {
 
-      for (const auto& val : m_list) {
-        std::cout << val << "\n";
+      std::cout << "[ ";
+      for (std::size_t i = 0; i < std::size(m_list) - 1; ++i) {
+        std::cout << val << ", ";
       }
-      std::cout << "\n";
+      std::cout << m_list[-1] << " ]\n";
       
     }
 
