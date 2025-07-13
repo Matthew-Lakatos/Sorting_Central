@@ -71,8 +71,8 @@ class bubble_sort {
     void print() const {
 
       std::cout << "[ ";
-      for (std::size_t i = 0; i < std::size(m_list) - 1; ++i) {
-        std::cout << val << ", ";
+      for (std::size_t i = 0; i < std::size(m_list) - 2; ++i) {
+        std::cout << m_list[i] << ", ";
       }
       std::cout << m_list[-1] << " ]\n";
       
