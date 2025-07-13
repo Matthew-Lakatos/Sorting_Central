@@ -17,7 +17,7 @@ import <sys/resource.h>;
 export template <typename t> // list can be of any type, uses a template to avoid type clashes and less code bloat
 class bubble_sort {
   public:
-    Bubblesort(std::vector<t> list) : m_list(std::move(list)) {} // initialise the list
+    bubble_sort(std::vector<t> list) : m_list(std::move(list)) {} // initialise the list
 
     void sort() {
       
