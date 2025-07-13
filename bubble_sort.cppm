@@ -39,7 +39,7 @@ class bubble_sort {
       auto duration = std::chrono::duration<double, std::milli>(end - start); // calculates the time taken
 
       std::cout << "Time taken: " << duration.count() << "ms\n";
-      std::cout << "Amortised empirical time complexity of O(n^2), best case O(1)";
+      std::cout << "Amortised empirical time complexity of O(n^2), best case O(1)\n";
         
     }
 
