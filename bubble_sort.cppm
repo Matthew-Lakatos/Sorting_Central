@@ -3,7 +3,6 @@ export module bubble_sort;
 import <vector>;
 import <iostream>;
 import <chrono>; // used for time output capability
-import <numeric>;
 import <algorithm>;
 
 #ifdef _WIN32 // configures the algorithm for compatibility with windows 32
