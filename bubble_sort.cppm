@@ -58,7 +58,7 @@ class bubble_sort {
 
 #ifdef _WIN32
       PROCESS_MEMORY_COUNTERS memInfo; // stores the amount of memory in use
-      GetProcessMemoryInfo(GetCurrentProcess(), &memInfo, sizeof(memInfo)); // calculates the memory used at a location in memory
+      GetProcessMemoryInfo(GetCurrentProcess(), &memInfo, sizeof(memInfo)); // stores the memory val stored at memInfo
       std::cout << "Process Working Set Size: " << memInfo.WorkingSetSize / 1024 << "KB\n"; // outputs the amount of memory used in KB (/1024 due to orders of magnitude being powers of 2)
 #elif __linux__
       struct rusage usage;
