@@ -49,7 +49,7 @@ class bubble_sort {
       std::size_t total_size = m_list.capacity() * element_size; // total size is list capacity * element size
 
       std::cout << "memory used: " << total_size << "bytes\n";
-      std::cout << "Amortised empirical memory complexity of O(n) (due to size of the list sorted)\n";
+      std::cout << "Amortised empirical memory complexity of O(1) (due to size of the list sorted)\n";
       
     }
 
