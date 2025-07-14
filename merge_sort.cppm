@@ -5,14 +5,6 @@ import <vector>;
 import <chrono>;
 import <algorithm>;
 
-#ifdef _WIN32 // configuration for different kernels (currently only supports linux and windows 32 bit)
-import <windows.h>;
-import <psapi.h>;
-#elif __linux__
-import <unistd.h>;
-import <sys/resource.h>;
-#endif
-
 export template <typename t>
 class merge_sort {
   public:
@@ -102,21 +94,6 @@ class merge_sort {
         m_list[k++] = right_half[j++];
       }
 
-    }
-
-    // marked as static due to gathering information from the entire algorithm, not just one aspect
-    static void report_memory_process_size()  { // reports peak memory usage by the full algorithm
-
-#ifdef _WIN32
-      PROCESS_MEMORY_COUNTERS memInfo;
-      GetProcessMemoryInfo(GetCurrentProcess(), &memInfo, sizeof(memInfo));
-      std::cout << "Process Working Set Size: " << memInfo.WorkingSetSize / 1024 << "KB\n"; // outputs peak memory used in KB
-#elif __linux__
-      struct rusage usage;
-      getrusage(RUSAGE_SELF, &usage);
-      std::cout << "Max resident set size: " << usage.ru_maxrss << "KB\n"; // already stored in KB in linux, no conversion needed
-#endif
-      
     }
 
     void print() const {
