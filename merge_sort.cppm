@@ -96,6 +96,18 @@ class merge_sort {
 
     }
 
+    void report_memory() const {
+
+      std::size_t element_size = sizeof(t);
+      std::size_t list_size = element_size * m_list.capacity();
+      std::size_t aux_size = element_size * m_list.size();
+      std::size_t total_size = aux_size + list_size;
+
+      std::cout << "Total memory used: " << total_size << " B\n";
+      std::cout << "Empirical memory complexity of O(n) (due to the creation of n auxillary arrays) of merge sort";
+      
+    }
+
     void print() const {
       
       for (std::size_t i = 0; i < std::size(m_list); ++i) {
