@@ -15,11 +15,14 @@ enum SortAlgorithm {
     stalin,
     lsd_radix,
     msd_radix,
-    shell
+    shell,
+    user_introsort,
+    introsort
 };
 
 std::unordered_map <std::string, SortAlgorithm> converter {{"bubble", bubble}, {"stable_merge", stable_merge}, {"unstable_merge", unstable_merge},
-{"insertion", insertion}, {"optimal_quick", optimal_quick}, {"naive_quick", naive_quick}, {"heap", heap}, {"bogo", bogo}, {"stalin", stalin}, {"lsd_radix", lsd_radix}, {"msd_radix", msd_radix}, {"shell", shell}};
+{"insertion", insertion}, {"optimal_quick", optimal_quick}, {"naive_quick", naive_quick}, {"heap", heap}, {"bogo", bogo}, {"stalin", stalin}, {"lsd_radix", lsd_radix},
+{"msd_radix", msd_radix}, {"shell", shell}, {"user_introsort", user_introsort}, {"introsort", introsort}};
 
 double take_time() {
 
@@ -82,6 +85,10 @@ void output_time_complexity(std::string sorting_algorithm) {
     case shell:
       std::cout << "Empirical time complexity heavily depends on the size of gap used (amortised O(n^4/3) as Sedgewick gap is used in this implementation), but best case of O(n * log2 n), worst case of O(n^2)\n";
       break;
+    case user_introsort:
+      std::cout << "Amortised Empirical time complexity of O(n * log2 n)\n"
+    case introsort:
+      std::cout << "Amortised Empirical time complexity of O(n * log2 n)\n"
   }
 
   std::cout << "Key: n = size of input list, k = digits of largest input\n";
