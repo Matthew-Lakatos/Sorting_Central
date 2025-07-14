@@ -31,20 +31,20 @@ double take_time() {
 
 }
 
-double total_time_calc(auto start, auto end) {
+double total_time_calc(auto& start, auto& end) {
 
   auto duration = std::chrono::duration<double, std::milli>(end - start); // calculates the time taken
   return duration.count();
 
 }
 
-void output_time(double duration) {
+void output_time(double& duration) {
 
   std::cout << "Time taken for the algorithm to execute: " << duration << " ms\n";
 
 }
 
-void output_time_complexity(std::string sorting_algorithm) {
+void output_time_complexity(std::string_view sorting_algorithm) {
 
   SortAlgorithm sort_algorithm = converter[sorting_algorithm];
 
