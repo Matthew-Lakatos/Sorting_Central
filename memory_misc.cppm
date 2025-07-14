@@ -1,5 +1,7 @@
 export module memory_misc;
 
+import <iostream>;
+
 #ifdef _WIN32 // configures the algorithm for compatibility with windows 32
 import <windows.h>;
 import <psapi.h>;
@@ -18,6 +20,8 @@ static void report_process_memory_size() { // reports peak memory usage by full 
   struct rusage usage;
   getrusage(RUSAGE_SELF, &usage);
   std::cout << "Max resident set size: " << usage.ru_maxrss << "KB\n";
+#else
+  std::cout << "Platform not supported by the current implementation\n";
 #endif
         
 };
