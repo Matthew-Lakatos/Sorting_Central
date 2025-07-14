@@ -2,7 +2,6 @@ export module merge_sort;
 
 import <iostream>;
 import <vector>;
-import <chrono>;
 import <algorithm>;
 
 export template <typename t>
@@ -12,8 +11,6 @@ class merge_sort {
 
     void sort(bool stable = false) {
 
-      auto start = std::chrono::high_resolution_clock::now(); // stores function starting time
-
       if (stable) {
         std::cout << "This function has a less optimised performance than its unstable counterpart, use its unstable counterpart to achieve this\n";
         stable_sort(0, std::size(m_list) - 1);
@@ -21,11 +18,6 @@ class merge_sort {
         std::cout << "This function does not support stability, use its less optimal counterpart to achieve this\n";
         unstable_sort(0, std::size(m_list) - 1));
       }
-
-      auto end = std::chrono::high_resolution_clock::now();
-      auto duration = std::chrono::duration<double, std::milli>(end - start); // calculates total time taken for algorithm to complete
-      std::cout << "Time taken: " << duration.count() << "ms\n";
-      std::cout << "Empirical time complexity of O(n * log2 (n)) (average and worst cases)\n";
 
     }
 
