@@ -2,7 +2,6 @@ export module bubble_sort;
 
 import <vector>;
 import <iostream>;
-import <chrono>; // used for time output capability
 import <algorithm>;
 
 export template <typename t> // list can be of any type, uses a template to avoid type clashes and less code bloat
@@ -12,7 +11,6 @@ class bubble_sort {
 
     void sort() {
       
-      auto start = std::chrono::high_resolution_clock::now(); // notes the time the algorithm has begun at
       for (std::size_t i = 0; i < m_list.size(); ++i) { // loop through the entire list
         bool swapped = false; // checking condition to see if the loop can break early, used to optimise the process
         for (std::size_t j = 0; j < m_list.size() - (i + 1); ++j) { // loop through each item of the list
@@ -25,12 +23,6 @@ class bubble_sort {
           break;
         }
       }
-
-      auto end = std::chrono::high_resolution_clock::now(); // notes when the algorithm has finished
-      auto duration = std::chrono::duration<double, std::milli>(end - start); // calculates the time taken
-
-      std::cout << "Time taken: " << duration.count() << "ms\n";
-      std::cout << "Amortised empirical time complexity of O(n^2), best case O(1)\n";
         
     }
 
