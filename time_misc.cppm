@@ -86,9 +86,11 @@ void output_time_complexity(std::string_view sorting_algorithm) {
       std::cout << "Empirical time complexity heavily depends on the size of gap used (amortised O(n^4/3) as Sedgewick gap is used in this implementation), but best case of O(n * log2 n), worst case of O(n^2)\n";
       break;
     case user_introsort:
-      std::cout << "Amortised Empirical time complexity of O(n * log2 n)\n"
+      std::cout << "Amortised Empirical time complexity of O(n * log2 n)\n";
+      break;
     case introsort:
-      std::cout << "Amortised Empirical time complexity of O(n * log2 n)\n"
+      std::cout << "Amortised Empirical time complexity of O(n * log2 n)\n";
+      break;
   }
 
   std::cout << "Key: n = size of input list, k = digits of largest input\n";
