@@ -77,10 +77,10 @@ void output_time_complexity(std::string_view sorting_algorithm) {
       std::cout << "Empirical time complexity of O(n)\n";
       break;
     case lsd_radix:
-      std::cout << "Empirical time complexity of O(n * k) (NOT suitable for any decimal value (produces a massive k, which in practice is slower than bogo sort), std::string s (anomalous outcomes for strings of varying size) or bools (overkill))\n";
+      std::cout << "Empirical time complexity of O(n * digits of largest input) (NOT suitable for any decimal value (produces a massive k, which in practice is slower than bogo sort), std::string s (anomalous outcomes for strings of varying size) or bools (overkill))\n";
       break;
     case msd_radix:
-      std::cout << "Empirical time complexity of O(n * k) (NOT suitable for any decimal value (produces a massive k, which in practice is slower than bogo sort), std::string s (anomalous outcomes for strings of varying size) or bools (overkill))\n";
+      std::cout << "Empirical time complexity of O(n * digits of largest input) (NOT suitable for any decimal value (produces a massive k, which in practice is slower than bogo sort), std::string s (anomalous outcomes for strings of varying size) or bools (overkill))\n";
       break;
     case shell:
       std::cout << "Empirical time complexity heavily depends on the size of gap used (amortised O(n^4/3) as Sedgewick gap is used in this implementation), but best case of O(n * log2 n), worst case of O(n^2)\n";
@@ -92,7 +92,5 @@ void output_time_complexity(std::string_view sorting_algorithm) {
       std::cout << "Amortised Empirical time complexity of O(n * log2 n)\n";
       break;
   }
-
-  std::cout << "Key: n = size of input list, k = digits of largest input\n";
 
 }
