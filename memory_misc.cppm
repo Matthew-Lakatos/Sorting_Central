@@ -49,4 +49,53 @@ void report_process_memory_size() { // reports peak memory usage by full process
         
 }
 
-void output_memory_complexity(std::string_view sorting_algorithm) {}
+void output_memory_complexity(std::string_view sorting_algorithm) {
+
+  SortAlgorithm sort_algorithm = converter[sorting_algorithm];
+
+  switch (sort_algorithm) {
+    case bubble:
+      std::cout << "Empirical memory complexity of O(1) (in-place)\n";
+      break;
+    case stable_merge:
+      std::cout << "Empirical memory complexity of O(n) (auxillary arrays required)\n";
+      break;
+    case unstable_merge:
+      std::cout << "Empirical memory complexity of O(n) (auxillary arrays required)\n";
+      break;
+    case insertion:
+      std::cout << "Empirical memory complexity of O(1) (in-place)\n";
+      break;
+    case optimal_quick:
+      std::cout << "Empirical memory complexity of O(log2 n) (tail recursion optimised)\n";
+      break;
+    case naive_quick:
+      std::cout << "Empirical memory complexity of O(n) (unbalanced recursion)\n";
+      break;
+    case heap:
+      std::cout << "Empirical memory complexity of O(1) (in-place)\n";
+      break;
+    case bogo:
+      std::cout << "Empirical memory complexity of O(1) (in-place)\n";
+      break;
+    case stalin:
+      std::cout << "Empirical memory complexity of O(1)\n";
+      break;
+    case lsd_radix:
+      std::cout << "Empirical memory complexity of O(n + k) (need count buckets, k is the range of digits)\n";
+      break;
+    case msd_radix:
+      std::cout << "Empirical memory complexity of O(n * k) (need count buckets, k is the range of digits)\n";
+      break;
+    case shell:
+      std::cout << "Empirical memory complexity of O(1) (in-place)\n";
+      break;
+    case user_introsort:
+      std::cout << "Empirical memory complexity of O(log2 n) (ensured by switch to heap if recursive depth is too great)\n";
+      break;
+    case introsort:
+      std::cout << "Empirical memory complexity of O(log2 n) (ensured by switch to heap if recursive depth is too great)\n";
+      break;
+  }
+
+}
