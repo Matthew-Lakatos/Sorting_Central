@@ -1,5 +1,8 @@
-module bubble_sort
-module merge_sort
+import bubble_sort;
+import merge_sort;
+
+import time_misc;
+import memory_misc;
 
 import <iostream>;
 import <vector>;
@@ -64,7 +67,25 @@ int main() {
   // list is finally initialised, now the actual sorting can occur, but fr, c++ needs some function to identify input types more easily
 
   std::string algorithm;
-  std::cout << "Enter the sorting algorithm you would like to implement:\n- bubble sort (a)\n- merge sort (b)\n- quick sort (WIP) (c)\n- heap sort (WIP) (d)\n- insertion sort (WIP) (e)\n"
+  std::cout << "Enter the sorting algorithm you would like to implement:\n- bubble sort (a)\n- merge sort (b)\n- insertion sort (WIP) (c)\n- quick sort (WIP) (d)\n- heap sort (WIP) (e)\n- bogo sort (WIP) (f)\n";
+  std::cout << "- stalin (g)\n- lsd radix (h)\n- msd radix (i)\n- shell (j)\n- my introsort implementation (k)\n- optimal introsort (l)\n";
+  std::getline(cin, algorithm);
+  algorithm[0] = std::tolower(algorithm[0]);
+
+  auto start = time_misc::take_time()
+  switch (algorithm) {
+    case "a":
+      bubble_sort bubbler {list};
+      bubbler.sort();
+      auto end = time_misc::take_time()
+      bubbler.print();
+      break;
+    case "b":
+      merge_sort merger {list};
+      
+  }
+  
+  auto difference = time_misc::total_time_calc(start, end);
 
   return 0;
 }
