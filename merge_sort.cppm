@@ -96,7 +96,6 @@ class merge_sort {
       std::size_t total_size = aux_size + list_size;
 
       std::cout << "Total memory used: " << total_size << " B\n";
-      std::cout << "Empirical memory complexity of O(n) (due to the creation of n auxillary arrays) of merge sort";
       
     }
 
