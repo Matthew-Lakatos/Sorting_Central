@@ -14,7 +14,7 @@ class lsd_radix_sort {
 
     std::vector<int> negatives, positives;
 
-    // Separate negative and positive numbers
+    // separate negative and positive numbers
     for (int i : m_list) {
         if (i < 0) {
             negatives.push_back(-i); // make negative numbers positive for sorting
@@ -23,17 +23,17 @@ class lsd_radix_sort {
         }
     }
 
-    // Sort separately
+    // sort separately
     lsd_radix(negatives);
     lsd_radix(positives);
 
-    // Reverse negatives (since more negative means smaller)
+    // reverse negatives (since more negative means smaller)
     std::reverse(negatives.begin(), negatives.end());
     for (int& i : negatives) {
         i = -i; // convert back to negative
     }
 
-    // Merge into final list
+    // merge into final list
     m_list = negatives;
     m_list.insert(m_list.end(), positives.begin(), positives.end());
     }
@@ -41,18 +41,18 @@ class lsd_radix_sort {
     void lsd_radix(std::vector<int>& list) {
       if (list.empty()) return;
 
-      // Find the maximum number to determine number of digits
+      // find the maximum number to determine number of digits
       int maxNum = *std::max_element(list.begin(), list.end());
       int maxDigits = 0;
 
       while (maxNum > 0) {
 
-        maxDigits++;
+        ++maxDigits;
         maxNum /= 10;
 
       }
 
-      // LSD Radix Sort
+      // the actual logic behind the sort
       for (int digit = 0; digit < maxDigits; ++digit) {
         std::vector<std::vector<int>> buckets(10);
         }
@@ -64,7 +64,7 @@ class lsd_radix_sort {
 
         }
 
-        // Flatten buckets back into list
+        // flatten buckets back into list
         list.clear();
 
         for (const auto& bucket : buckets) {
