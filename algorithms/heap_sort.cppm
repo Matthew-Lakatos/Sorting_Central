@@ -1,4 +1,4 @@
-export module heap_sort;
+export module algorithms.heap_sort;
 
 import <vector>;
 import <algorithm>;
