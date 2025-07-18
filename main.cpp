@@ -1,8 +1,14 @@
-import bubble_sort;
-import merge_sort;
+import algorithms.bubble_sort;
+import algorithms.merge_sort;
+import algorithms.heap_sort;
+import algorithms.lsd_radix_sort;
+import algorithms.quick_sort;
+import algorithms.bogo_sort;
+import algorithms.insertion_sort;
+import algorithms.msd_radix_sort;
 
-import time_misc;
-import memory_misc;
+import features.time_misc;
+import features.memory_misc;
 
 import <iostream>;
 import <vector>;
@@ -67,8 +73,8 @@ int main() {
   // list is finally initialised, now the actual sorting can occur, but fr, c++ needs some function to identify input types more easily
 
   std::string algorithm;
-  std::cout << "Enter the sorting algorithm you would like to implement:\n- bubble sort (a)\n- merge sort (b)\n- insertion sort (WIP) (c)\n- quick sort (WIP) (d)\n- heap sort (WIP) (e)\n- bogo sort (WIP) (f)\n";
-  std::cout << "- stalin (g)\n- lsd radix (currently only built for integer values) (h)\n- msd radix (currently only built for integer values) (i)\n- shell (j)\n- my introsort implementation (k)\n- optimal introsort (l)\n";
+  std::cout << "Enter the sorting algorithm you would like to implement:\n- bubble sort (a)\n- merge sort (b)\n- insertion sort (c)\n- quick sort (d)\n- heap sort (e)\n- bogo sort (f)\n";
+  std::cout << "- stalin (WIP) (g)\n- LSD radix (currently only built for integer values) (h)\n- MSD radix (currently only built for integer values) (i)\n- shell (WIP) (j)\n- my introsort implementation (WIP) (k)\n- optimal introsort (WIP) (l)\n";
   std::getline(cin, algorithm);
   algorithm[0] = std::tolower(algorithm[0]);
 
