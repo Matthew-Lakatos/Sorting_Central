@@ -1,4 +1,4 @@
-export module bogo_sort;
+export module algorithms.bogo_sort;
 
 import <iostream>;
 import <vector>;
