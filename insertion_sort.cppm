@@ -7,7 +7,7 @@ import <iostream>;
 export template <typename t>
 class insertion_sort {
   public:
-    insertion_sort(list) : m_list(std::move(list)) {}
+    insertion_sort(std::vector<int> list) : m_list(std::move(list)) {}
 
     void sort() {
 
