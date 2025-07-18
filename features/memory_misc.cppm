@@ -1,4 +1,4 @@
-export module memory_misc;
+export module features.memory_misc;
 
 import <iostream>;
 import <string>;
