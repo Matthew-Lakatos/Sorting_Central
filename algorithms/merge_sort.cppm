@@ -1,4 +1,4 @@
-export module merge_sort;
+export module algorithms.merge_sort;
 
 import <iostream>;
 import <vector>;
