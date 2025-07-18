@@ -51,4 +51,7 @@ class bogo_sort {
       
     }
 
+  private:
+    std::vector<t> m_list;
+
 };
