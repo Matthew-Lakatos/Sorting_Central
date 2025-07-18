@@ -1,4 +1,4 @@
-export module insertion_sort;
+export module algorithms.insertion_sort;
 
 import <vector>;
 import <algorithm>;
