@@ -13,7 +13,7 @@ class bogo_sort {
 public:
     bogo_sort(std::vector<t> list) : m_list(std::move(list)) {}
 
-    // Sorts using bogo sort until max_duration_ms is reached
+    // sorts using bogo sort until max_duration_ms is reached
     void sort(double max_duration_ms, std::chrono::steady_clock::time_point start) {
         std::random_device rd;
         std::mt19937 gen(rd());
