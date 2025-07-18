@@ -68,7 +68,7 @@ int main() {
 
   std::string algorithm;
   std::cout << "Enter the sorting algorithm you would like to implement:\n- bubble sort (a)\n- merge sort (b)\n- insertion sort (WIP) (c)\n- quick sort (WIP) (d)\n- heap sort (WIP) (e)\n- bogo sort (WIP) (f)\n";
-  std::cout << "- stalin (g)\n- lsd radix (h)\n- msd radix (i)\n- shell (j)\n- my introsort implementation (k)\n- optimal introsort (l)\n";
+  std::cout << "- stalin (g)\n- lsd radix (currently only built for integer values) (h)\n- msd radix (currently only built for integer values) (i)\n- shell (j)\n- my introsort implementation (k)\n- optimal introsort (l)\n";
   std::getline(cin, algorithm);
   algorithm[0] = std::tolower(algorithm[0]);
 
