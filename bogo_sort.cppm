@@ -18,8 +18,8 @@ class bogo_sort {
 
       while (! std::is_sorted(first, last) && current_time_taken < maximum) {
 
-        std::shuffle(first, last, gen); / completely inefficient
-        current_time_taken = std::chrono::duration<double, std::milli>(std::chrono::high_resolution_clock::now() - start);
+        std::shuffle(first, last, gen); // completely inefficient
+        current_time_taken = std::chrono::duration<double, std::milli>(std::chrono::high_resolution_clock::now() - start); // returns the current elapsed time to ensure loop is not infinite
 
       }
 
