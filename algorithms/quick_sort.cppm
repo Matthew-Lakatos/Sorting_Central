@@ -1,4 +1,4 @@
-export module quick_sort;
+export module algorithms.quick_sort;
 
 import <iostream>;
 import <vector>;
