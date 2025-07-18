@@ -1,4 +1,4 @@
-export module bubble_sort;
+export module algorithms.bubble_sort;
 
 import <vector>;
 import <iostream>;
