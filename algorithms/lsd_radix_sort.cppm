@@ -1,4 +1,4 @@
-export module lsd_radix_sort;
+export module algorithms.lsd_radix_sort;
 
 import <vector>;
 import <iostream>;
