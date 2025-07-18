@@ -74,6 +74,29 @@ class lsd_radix_sort {
         }
     }
 
+    void print() const {
+        std::cout << "[ ";
+        for (auto it = m_list.begin(); it != m_list.end(); ++it) {
+            std::cout << *it;
+            if (std::next(it) != m_list.end()) std::cout << ", ";
+        }
+        std::cout << " ]\n";
+    }
+
+    void report_memory() const {
+        size_t input_mem = arr.capacity() * sizeof(int);
+        size_t bucket_mem = buckets.size() * sizeof(std::vector<int>);
+
+        size_t data_mem = 0;
+        for (const auto& b : buckets) {
+            data_mem += b.capacity() * sizeof(int);
+        }
+
+        size_t total = input_mem + bucket_mem + data_mem;
+
+        std::println("Estimated total memory used: {} B\n", total);
+    }
+
   private:
     std::vector<int> m_list;
 
