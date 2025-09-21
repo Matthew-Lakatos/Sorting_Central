@@ -32,7 +32,7 @@ int main() {
   std::istringstream iss(input); // fresh stream for actual parsing
 
   // Try to interpret the first token
-  int int_val
+  int int_val;
   long long_val;
   double double_val;
   long double ld_val;
@@ -78,18 +78,35 @@ int main() {
   std::getline(cin, algorithm);
   algorithm[0] = std::tolower(algorithm[0]);
 
-  auto start = time_misc::take_time()
-  switch (algorithm) {
-    case "a":
-      bubble_sort bubbler {list};
-      bubbler.sort();
-      auto end = time_misc::take_time()
-      bubbler.print();
-      break;
-    case "b":
-      merge_sort merger {list};
-      
+  auto start = time_misc::take_time();
+  if (algorithm == 'a') { // no switch statement as only integral types are supported
+    bubble_sort bubbler {list};
+    bubbler.sort();
+    bubbler.print();
+  } else if (algorithm == "b") {
+    merge_sort merger {list};
+    merger.sort();
+    merger.print();
+  } else if (algorithm == 'c') {
+    insertion_sort inserter {list};
+    inserter.sort();
+    inserter.print();
+  } else if (algorithm == 'd') {
+    quick_sort qsorter {list};
+    qsorter.sort();
+    qsorter.print();
+  } else if (algorithm == 'e') {
+    heap_sort hsorter {list};
+    hsorter.sort();
+    hsorter.print();
+  } else if (algorithm == 'f') {
+    bogo_sort bogosorter {list};
+    bogosorter.sort();
+    bogosorter.print();
+  } else if (algorithm == 'g') {
+    // completed later
   }
+  auto end = time_misc::take_time(); // seperated to avoid code bloat
   
   auto difference = time_misc::total_time_calc(start, end);
 
