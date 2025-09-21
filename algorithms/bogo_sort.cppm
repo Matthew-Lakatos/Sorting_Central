@@ -23,7 +23,7 @@ public:
         double elapsed_ms = 0.0;
 
         while (!std::is_sorted(first, last) && elapsed_ms < max_duration_ms) {
-            std::ranges::shuffle(m_list, gen); // C++20 ranges-based shuffle
+            std::ranges::shuffle(m_list, gen); // newest c++ shuffle func
             auto now = std::chrono::steady_clock::now();
             elapsed_ms = std::chrono::duration<double, std::milli>(now - start).count();
         }
