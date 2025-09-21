@@ -21,7 +21,7 @@ int main() {
   
   std::string input;
   std::cout << "Enter some space separated values for the list you need sorting\n";
-  std::cout << "              (end the input stream with value " << R"("end")" << " )\n";
+  std::cout << "              (end the input stream with value " << R"("/0")" << " )\n";
   std::getline(std::cin, input);
   std::cout << "\n";
   // Try to determine the type based on first token (aka the most painful thing in the world) (i miss python and dynamic type inference)
@@ -74,7 +74,7 @@ int main() {
 
   std::string algorithm;
   std::cout << "Enter the sorting algorithm you would like to implement:\n- bubble sort (a)\n- merge sort (b)\n- insertion sort (c)\n- quick sort (d)\n- heap sort (e)\n- bogo sort (f)\n";
-  std::cout << "- stalin (WIP) (g)\n- LSD radix (h)\n- MSD radix (WIP) (i)\n- shell (WIP) (j)\n- my introsort implementation (WIP) (k)\n- optimal introsort (WIP) (l)\n";
+  std::cout << "- LSD radix (g)\n- MSD radix (h)\n- shell (i)\n- my introsort implementation (j)\n- optimal introsort (k)\n";
   std::getline(cin, algorithm);
   algorithm[0] = std::tolower(algorithm[0]);
 
